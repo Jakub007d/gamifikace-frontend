@@ -1,0 +1,26 @@
+import React from "react";
+import axios from "axios";
+import { date } from "zod";
+import fetchUser from "../Downloaders/UserDownloader";
+import fetchUserID from "../Downloaders/UserIDDownloader";
+async function ScoreUploader(courseID: string, points: number) {
+  var today = new Date();
+  fetchUserID(localStorage.getItem("access_token")!).then(
+    async (user_id: string) => {
+      const question: Score_POST = {
+        user_id: user_id,
+        courseID: courseID,
+        point: points,
+      }; // Create the POST requuest
+      const { data } = await axios.post(
+        "http://localhost:8000/score/entry",
+        question,
+        {
+          headers: { "Content-Type": "application/json" },
+        }
+      );
+    }
+  );
+}
+
+export default ScoreUploader;
