@@ -1,8 +1,7 @@
 async function fetchQuestionSpecific(question_id: String): Promise<Question[]> {
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/question/specific?format=json&questionID=" +
-        question_id
+      API_URL + "/question/specific?format=json&questionID=" + question_id
     );
     const data = await response.json();
     return data;

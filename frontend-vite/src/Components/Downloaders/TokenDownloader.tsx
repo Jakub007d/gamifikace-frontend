@@ -5,7 +5,7 @@ async function fetchTokens(username: string, password: string) {
     username: username,
     password: password,
   }; // Create the POST requuest
-  const { data } = await axios.post("http://localhost:8000/token/", user, {
+  const { data } = await axios.post(API_URL + "/token/", user, {
     headers: { "Content-Type": "application/json" },
   });
   // Initialize the access & refresh token in localstorage.

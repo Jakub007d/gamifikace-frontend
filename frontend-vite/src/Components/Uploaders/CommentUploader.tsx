@@ -18,7 +18,7 @@ async function NewComment(
         text: text,
       }; // Create the POST requuest
       axios
-        .post("http://localhost:8000/comment/add", question, {
+        .post(API_URL + "/comment/add", question, {
           headers: { "Content-Type": "application/json" },
         })
         .then((response) => {

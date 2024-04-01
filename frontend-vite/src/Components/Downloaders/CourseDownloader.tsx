@@ -1,7 +1,7 @@
 async function fetchOkruhs(courseID: String): Promise<Okruh[]> {
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/okruhs/querry?format=json&courseID=" + courseID
+      API_URL + "/okruhs/querry?format=json&courseID=" + courseID
     );
     const data = await response.json();
     return data;

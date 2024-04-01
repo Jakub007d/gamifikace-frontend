@@ -3,6 +3,7 @@ import axios from "axios";
 import { date } from "zod";
 import fetchUser from "../Downloaders/UserDownloader";
 import fetchUserID from "../Downloaders/UserIDDownloader";
+import { API_URL } from "@/src/constants";
 let refresh = false;
 axios.interceptors.response.use(
   (resp) => resp,
@@ -10,9 +11,8 @@ axios.interceptors.response.use(
     if (error.response.status === 401 && !refresh) {
       refresh = true;
       console.log(localStorage.getItem("refresh_token"));
-      alert("LOL");
       const response = await axios.post(
-        "http://localhost:8000/token/refresh/",
+        API_URL + "/token/refresh/",
         {
           refresh: localStorage.getItem("refresh_token"),
         },
@@ -53,18 +53,14 @@ async function postQuestionWithAnswers(
         text: question_text,
         visible: true,
       }; // Create the POST requuest
-      const { data } = await axios.post(
-        "http://localhost:8000/newQuestion/",
-        question,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const { data } = await axios.post(API_URL + "/newQuestion/", question, {
+        headers: { "Content-Type": "application/json" },
+      });
       // Initialize the access & refresh token in localstorage.
       for (let answer of answers) {
         answer.question = data;
       }
-      await axios.post("http://localhost:8000/newAnswers/", answers, {
+      await axios.post(API_URL + "/newAnswers/", answers, {
         headers: { "Content-Type": "application/json" },
       });
     }

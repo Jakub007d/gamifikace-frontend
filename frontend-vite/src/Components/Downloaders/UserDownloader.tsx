@@ -1,8 +1,9 @@
+import { API_URL } from "@/src/constants";
 import axios from "axios";
 
 async function fetchUser(access_token: String): Promise<string> {
   try {
-    const { data } = await axios.post("http://localhost:8000/user/", {
+    const { data } = await axios.post(API_URL + "/user/", {
       access_token: access_token,
     });
     return data;

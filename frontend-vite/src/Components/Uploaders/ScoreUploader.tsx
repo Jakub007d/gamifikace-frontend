@@ -12,13 +12,9 @@ async function ScoreUploader(courseID: string, points: number) {
         courseID: courseID,
         point: points,
       }; // Create the POST requuest
-      const { data } = await axios.post(
-        "http://localhost:8000/score/entry",
-        question,
-        {
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      const { data } = await axios.post(API_URL + "/score/entry", question, {
+        headers: { "Content-Type": "application/json" },
+      });
     }
   );
 }

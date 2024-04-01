@@ -2,7 +2,7 @@ import axios from "axios";
 
 async function fetchUserID(access_token: String): Promise<string> {
   try {
-    const { data } = await axios.post("http://localhost:8000/userID/", {
+    const { data } = await axios.post(API_URL + "/userID/", {
       access_token: access_token,
     });
     return data;
