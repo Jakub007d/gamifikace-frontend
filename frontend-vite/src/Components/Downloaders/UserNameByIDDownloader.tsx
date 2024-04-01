@@ -1,5 +1,5 @@
 import { API_URL } from "@/src/constants";
-import { User } from "lucide-react";
+import { User } from "@/src/props/Props";
 
 async function fetchUserName(userID: String): Promise<User[]> {
   try {

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../constants";
 let refresh = false;
 axios.interceptors.response.use(
   (resp) => resp,
@@ -8,7 +9,7 @@ axios.interceptors.response.use(
       console.log(localStorage.getItem("refresh_token"));
       alert("LOL");
       const response = await axios.post(
-        "http://localhost:8000/token/refresh/",
+        API_URL + "/token/refresh/",
         {
           refresh: localStorage.getItem("refresh_token"),
         },

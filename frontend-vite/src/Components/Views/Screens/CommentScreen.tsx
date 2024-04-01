@@ -4,6 +4,7 @@ import React from "react";
 import fetchQuestions from "../../Downloaders/QuestionsDownloader";
 import fetchComments from "../../Downloaders/CommentDownloader";
 import { ComentView } from "../../Coments/ComentView";
+import { Comment } from "@/src/props/Props";
 import {
   Form,
   FormControl,

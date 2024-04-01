@@ -1,5 +1,4 @@
-export{
-interface Question {
+export interface Question {
   id: string;
   name: string;
   text: string;
@@ -11,20 +10,20 @@ interface Question {
   okruh: string;
   is_text_question: Boolean;
 }
-interface Answer {
+export interface Answer {
   id: string;
   text: string;
   answer_type: boolean;
   question: string;
 }
-interface Okruh {
+export interface Okruh {
   id: string;
   name: string;
   available: boolean;
   course: string;
 }
 
-interface Comment {
+export interface Comment {
   id: string;
   text: string;
   created_at: Date;
@@ -32,30 +31,29 @@ interface Comment {
   likes: number;
   question: string;
 }
-interface User {
+export interface User {
   username: string;
   email: string;
   id: string;
 }
-interface Course {
+export interface Course {
   id: string;
   name: string;
 }
-interface Score {
+export interface Score {
   id: string;
   points: number;
   user_id: string;
   username: string;
   coursename: string;
 }
-interface Score_POST {
+export interface Score_POST {
   user_id: string;
   courseID: string;
   point: number;
 }
-interface Comment_POST {
+export interface Comment_POST {
   user_id: string;
   question_id: string;
   text: string;
-}
 }

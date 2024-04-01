@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import { Comment } from "@/src/props/Props";
 interface Props {
   questionId: string;
   //(item: string) => parrent daco chce zistit

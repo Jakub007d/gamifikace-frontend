@@ -1,3 +1,4 @@
+import { API_URL } from "@/src/constants";
 import axios from "axios";
 import { useEffect } from "react";
 
@@ -5,7 +6,7 @@ async function Logout() {
   localStorage.clear();
   try {
     const { data } = await axios.post(
-      "http://localhost:8000/logout/",
+      API_URL + "/logout/",
       {
         refresh_token: localStorage.getItem("refresh_token"),
       },
