@@ -12,6 +12,6 @@ export const ComentView = ({ userID, commentID }: Props) => {
   });
   if (status === "success") {
     return <h5>{name[0].username}</h5>;
-  }
-  if (status === "pending") return <h5>...</h5>;
+  } else if (status === "pending") return <h5>...</h5>;
+  else return <h5>ERROR</h5>;
 };

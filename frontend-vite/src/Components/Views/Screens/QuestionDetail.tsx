@@ -53,8 +53,7 @@ export const QuestionDetail = ({ questionID, is_challange }: Props) => {
         </div>
       </CardHeader>
     );
-  }
-  if (status === "success" && answer_status === "success") {
+  } else if (status === "success" && answer_status === "success") {
     return (
       <>
         <CardHeader className="cardHeader">
@@ -115,5 +114,5 @@ export const QuestionDetail = ({ questionID, is_challange }: Props) => {
         </CardContent>
       </>
     );
-  }
+  } else return <h5>ERROR</h5>;
 };

@@ -1,3 +1,4 @@
+export{
 interface Question {
   id: string;
   name: string;
@@ -56,4 +57,5 @@ interface Comment_POST {
   user_id: string;
   question_id: string;
   text: string;
+}
 }
