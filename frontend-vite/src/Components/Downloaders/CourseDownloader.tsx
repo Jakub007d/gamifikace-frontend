@@ -1,3 +1,5 @@
+import { API_URL } from "@/src/constants";
+
 async function fetchOkruhs(courseID: String): Promise<Okruh[]> {
   try {
     const response = await fetch(

@@ -1,3 +1,5 @@
+import { API_URL } from "@/src/constants";
+
 async function fetchCourses(): Promise<Course[]> {
   try {
     const response = await fetch(API_URL + "/courses/?format=json");

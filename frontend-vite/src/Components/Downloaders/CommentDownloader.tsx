@@ -1,3 +1,5 @@
+import { API_URL } from "@/src/constants";
+
 async function fetchComments(questionID: String): Promise<Comment[]> {
   try {
     const response = await fetch(

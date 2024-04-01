@@ -4,6 +4,7 @@ import { date } from "zod";
 import fetchUser from "../Downloaders/UserDownloader";
 import fetchUserID from "../Downloaders/UserIDDownloader";
 import { QueryClient } from "@tanstack/react-query";
+import { API_URL } from "@/src/constants";
 async function NewComment(
   questionID: string,
   text: string,

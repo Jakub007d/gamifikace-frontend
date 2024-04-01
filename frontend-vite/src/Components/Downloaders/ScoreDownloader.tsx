@@ -1,3 +1,5 @@
+import { API_URL } from "@/src/constants";
+
 async function fetchScore(courseID: string): Promise<Score[]> {
   try {
     const response = await fetch(

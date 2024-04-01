@@ -1,3 +1,5 @@
+import { API_URL } from "@/src/constants";
+
 async function fetchQuestionSpecific(question_id: String): Promise<Question[]> {
   try {
     const response = await fetch(

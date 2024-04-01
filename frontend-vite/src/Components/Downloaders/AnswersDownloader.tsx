@@ -1,7 +1,9 @@
+import { API_URL } from "@/src/constants";
+
 async function fetchAnswers(questionID: String): Promise<Answer[]> {
   try {
     const response = await fetch(
-      "http://127.0.0.1:8000/answer/querry?format=json&questionID=" + questionID
+      API_URL+"/answer/querry?format=json&questionID=" + questionID
     );
     const data = await response.json();
     return data;

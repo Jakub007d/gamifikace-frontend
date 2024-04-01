@@ -1,3 +1,4 @@
+import { API_URL } from "@/src/constants";
 import axios from "axios";
 
 async function fetchUserID(access_token: String): Promise<string> {
