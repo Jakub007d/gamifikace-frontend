@@ -4,6 +4,7 @@ import { date } from "zod";
 import fetchUser from "../Downloaders/UserDownloader";
 import fetchUserID from "../Downloaders/UserIDDownloader";
 import { API_URL } from "@/src/constants";
+import { Answer, Question } from "@/src/props/Props";
 let refresh = false;
 axios.interceptors.response.use(
   (resp) => resp,

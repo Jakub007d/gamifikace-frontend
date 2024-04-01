@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ScoreUploader from "../Uploaders/ScoreUploader";
+import { Answer, Question } from "@/src/props/Props";
 interface Props {
   answers: Answer[];
   questions: Question[];

@@ -1,4 +1,5 @@
 import { API_URL } from "@/src/constants";
+import { Okruh } from "@/src/props/Props";
 
 async function fetchOkruh(okruhID: String): Promise<Okruh[]> {
   try {

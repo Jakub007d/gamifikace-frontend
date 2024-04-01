@@ -1,4 +1,5 @@
 import { API_URL } from "@/src/constants";
+import { Course } from "@/src/props/Props";
 
 async function fetchCourses(): Promise<Course[]> {
   try {

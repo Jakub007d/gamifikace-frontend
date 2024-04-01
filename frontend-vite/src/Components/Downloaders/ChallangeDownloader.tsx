@@ -1,4 +1,5 @@
 import { API_URL } from "@/src/constants";
+import { Question } from "@/src/props/Props";
 
 async function fetchChallange(courseID: string): Promise<Question[]> {
   try {

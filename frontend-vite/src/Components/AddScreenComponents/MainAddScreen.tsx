@@ -4,6 +4,7 @@ import add_icon from "./icons/add_icon.svg";
 import { Link } from "react-router-dom";
 import { QuestionField } from "./QuestionField";
 import postQuestionWithAnswers from "../Uploaders/QuestionUploader";
+import { Answer } from "@/src/props/Props";
 interface Props {
   newAnswers: Answer[];
   answerNumber: number;

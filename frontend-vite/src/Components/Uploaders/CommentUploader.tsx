@@ -5,6 +5,7 @@ import fetchUser from "../Downloaders/UserDownloader";
 import fetchUserID from "../Downloaders/UserIDDownloader";
 import { QueryClient } from "@tanstack/react-query";
 import { API_URL } from "@/src/constants";
+import { Comment_POST } from "@/src/props/Props";
 async function NewComment(
   questionID: string,
   text: string,

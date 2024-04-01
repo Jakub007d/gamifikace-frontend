@@ -1,4 +1,5 @@
 import { API_URL } from "@/src/constants";
+import { Score } from "@/src/props/Props";
 
 async function fetchScore(courseID: string): Promise<Score[]> {
   try {

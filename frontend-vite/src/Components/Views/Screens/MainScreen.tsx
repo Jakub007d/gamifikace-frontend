@@ -7,6 +7,7 @@ import { Route, Routes, useNavigate } from "react-router-dom";
 import StudyScreen from "./StudyScreen";
 import fetchScore from "../../Downloaders/ScoreDownloader";
 import user_icon from "../icons/user-icon-svgrepo-com.svg";
+import { Course, Score } from "@/src/props/Props";
 interface Props {
   courseID: string;
   set_course_id: (courseID: string) => void;

@@ -4,6 +4,7 @@ import { date } from "zod";
 import fetchUser from "../Downloaders/UserDownloader";
 import fetchUserID from "../Downloaders/UserIDDownloader";
 import { API_URL } from "@/src/constants";
+import { Score_POST } from "@/src/props/Props";
 async function ScoreUploader(courseID: string, points: number) {
   var today = new Date();
   fetchUserID(localStorage.getItem("access_token")!).then(

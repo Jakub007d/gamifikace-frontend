@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { AnswerField } from "./AnswerField";
 import { FieldValues } from "react-hook-form";
+import { Answer, Question } from "@/src/props/Props";
 interface Props {
   question: Question;
   answers: Answer[];

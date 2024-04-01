@@ -15,6 +15,7 @@ import { CommentScreen } from "./CommentScreen";
 import ScoreUploader from "../../Uploaders/ScoreUploader";
 import { QuestionDetail } from "./QuestionDetail";
 import { FieldValues } from "react-hook-form";
+import { Question, Answer } from "@/src/props/Props";
 interface Props {
   questions: Question[];
   is_challange: boolean;

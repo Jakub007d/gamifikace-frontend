@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { Card as UICard } from "@/components/ui/card";
 import fetchCourses from "../../Downloaders/CoursesDownloader";
+import { Course, Okruh } from "@/src/props/Props";
 interface Props {
   courseID: string;
   onSelected: (selected: string) => void;

@@ -4,6 +4,7 @@ import fetchQuestionSpecific from "../../Downloaders/SpecificQuetionDownloader";
 import { CardContent, CardHeader } from "@/components/ui/card";
 import fetchAnswers from "../../Downloaders/AnswersDownloader";
 import { Link } from "react-router-dom";
+import { Answer } from "@/src/props/Props";
 interface Props {
   questionID: string;
   is_challange: boolean;

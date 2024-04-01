@@ -1,3 +1,4 @@
+import { Answer } from "@/src/props/Props";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 interface Props {

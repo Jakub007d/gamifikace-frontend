@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import fetchAnswers from "../Downloaders/AnswersDownloader";
+import { Question, Answer } from "@/src/props/Props";
 interface Props {
   children?: JSX.Element | JSX.Element[];
   itemShonw: boolean;

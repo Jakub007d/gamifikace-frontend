@@ -4,6 +4,7 @@ import CardWindow from "./CardComponents/CardWindow";
 import fetchAnswers from "./Downloaders/AnswersDownloader";
 import MobileBasicView from "./Views/MobileView/MobileBasicView";
 import fetchQuestions from "./Downloaders/QuestionsDownloader";
+import { Question, Answer } from "../props/Props";
 interface Props {
   question: Question[];
   okruhID: string;

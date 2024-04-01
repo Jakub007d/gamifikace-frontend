@@ -4,6 +4,7 @@ import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import { MainAddScreen } from "../../AddScreenComponents/MainAddScreen";
 import { AddAnswer } from "../../AddScreenComponents/AddAnswer";
 import postQuestionWithAnswers from "../../Uploaders/QuestionUploader";
+import { Answer } from "@/src/props/Props";
 interface Props {
   lectionID: string;
 }

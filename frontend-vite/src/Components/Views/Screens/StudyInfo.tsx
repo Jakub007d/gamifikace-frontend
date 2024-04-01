@@ -4,6 +4,7 @@ import MobileBasicView from "../MobileView/MobileBasicView";
 import GenericCardWindow from "../../CardComponents/GenericCardWindow";
 import { Link } from "react-router-dom";
 import { NavigationButton } from "../../CardComponents/NavigationButton";
+import { Okruh } from "@/src/props/Props";
 interface Props {
   okruhID: string;
 }
