@@ -63,15 +63,7 @@ function Card({ questions, is_challange, courseID }: Props) {
   }
   if (status === "success") {
     return (
-      <UICard
-        style={{
-          minWidth: "500px",
-          maxWidth: "700px",
-          height: "100vh",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
-      >
+      <UICard className="ui_card">
         {/* A JSX comment 
     <div
     
@@ -134,6 +126,7 @@ function Card({ questions, is_challange, courseID }: Props) {
             path="/Comments"
             element={
               <CommentScreen
+                is_challange={is_challange}
                 questionID={selectedQuestion}
                 onSubmit={(vals: FieldValues) => {
                   alert(vals.comment);

@@ -5,6 +5,7 @@ import { MainAddScreen } from "../../AddScreenComponents/MainAddScreen";
 import { AddAnswer } from "../../AddScreenComponents/AddAnswer";
 import postQuestionWithAnswers from "../../Uploaders/QuestionUploader";
 import { Answer } from "@/src/props/Props";
+import back_icon from "./icon/back.svg";
 interface Props {
   lectionID: string;
 }
@@ -18,15 +19,16 @@ export const AddQuestionScreen = ({ lectionID }: Props) => {
     navigate("/AddQuestion/AddScreen");
   }, []);
   return (
-    <UICard
-      style={{
-        minWidth: "500px",
-        maxWidth: "700px",
-        height: "100vh",
-        marginLeft: "auto",
-        marginRight: "auto",
-      }}
-    >
+    <UICard className="ui_card">
+      <div style={{ height: "50px", backgroundColor: "lightblue" }}>
+        <img
+          src={back_icon}
+          style={{ height: "100%" }}
+          onClick={() => {
+            navigate("/Courses");
+          }}
+        ></img>
+      </div>
       <Link to="/AddQuestion/AddScreen">HERE</Link>
       <Routes>
         <Route

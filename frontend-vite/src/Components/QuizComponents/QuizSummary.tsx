@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ScoreUploader from "../Uploaders/ScoreUploader";
 import { Answer, Question } from "@/src/props/Props";
+import back_icon from "./icon/back.svg";
 interface Props {
   answers: Answer[];
   questions: Question[];
@@ -18,8 +19,18 @@ export const QuizSummary = ({
   courseID,
   onSelectedQuestion,
 }: Props) => {
+  let navigate = useNavigate();
   return (
     <div>
+      <div style={{ height: "50px", backgroundColor: "lightblue" }}>
+        <img
+          src={back_icon}
+          style={{ height: "100%" }}
+          onClick={() => {
+            navigate("/Courses");
+          }}
+        ></img>
+      </div>
       {is_challange && <h1>Získané skóre: {score * 10}</h1>}
       <h1>
         Správnych odpovedí: {score}/{questions.length}

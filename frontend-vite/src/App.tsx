@@ -17,7 +17,7 @@ import "./App.css";
 import List from "./Components/List";
 import QuestionDetail from "./Components/QuestionDetail";
 import { Navbar } from "./Components/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Card from "./Components/Card";
 import FlashCard from "./Components/FlashCard";
 import StudyScreen from "./Components/Views/Screens/StudyScreen";
@@ -30,6 +30,7 @@ import { MainScreen } from "./Components/Views/Screens/MainScreen";
 import { AddQuestionScreen } from "./Components/Views/Screens/AddQuestionScreen";
 import fetchChallange from "./Components/Downloaders/ChallangeDownloader";
 function App() {
+  let navigate = useNavigate();
   const [selectedOkruh, setOkruh] = useState("1");
   const [selectedCourse, setCourse] = useState("1");
   const [lectionID, setLectionID] = useState("");
@@ -42,10 +43,11 @@ function App() {
     queryKey: [selectedCourse, "challange_questions"],
     queryFn: () => fetchChallange(selectedCourse),
   });
+  useEffect(() => {
+    navigate("/Courses");
+  }, []);
   return (
-    <div className="App d-flex flex-column">
-      <Navbar />
-      <h1>Hello</h1>
+    <div>
       <Routes>
         <Route
           path="/testOkruhs"

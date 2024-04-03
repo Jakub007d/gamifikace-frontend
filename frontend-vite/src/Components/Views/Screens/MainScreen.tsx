@@ -8,6 +8,9 @@ import StudyScreen from "./StudyScreen";
 import fetchScore from "../../Downloaders/ScoreDownloader";
 import user_icon from "../icons/user-icon-svgrepo-com.svg";
 import { Course, Score } from "@/src/props/Props";
+import back_icon from "./icon/back.svg";
+import { LogOut } from "lucide-react";
+import Logout from "../../LoginComponents/logout";
 interface Props {
   courseID: string;
   set_course_id: (courseID: string) => void;
@@ -24,30 +27,43 @@ export const MainScreen = ({ courseID, set_course_id }: Props) => {
     queryFn: () => fetchCourses(),
   });
   return (
-    <UICard
-      style={{
-        minWidth: "500px",
-        maxWidth: "700px",
-        height: "100vh",
-        marginLeft: "auto",
-        marginRight: "auto",
-      }}
-    >
+    <UICard className="ui_card">
       {status === "pending" && <div>Loading...</div>}
       {status === "success" && (
         <>
           <CardHeader className="cardHeader" style={{ minHeight: "150px" }}>
-            <select
-              style={{ width: "50%" }}
-              className="center"
-              id="courses"
-              value={courseID}
-              onChange={(selected) => set_course_id(selected.target.value)}
+            <div
+              style={{
+                height: "50px",
+                backgroundColor: "lightblue",
+                display: "flex",
+                justifyContent: "space-evenly",
+              }}
             >
-              {courses!.map((course: Course) => (
-                <option value={course.id}>{course.name}</option>
-              ))}
-            </select>
+              <select
+                style={{ width: "50%" }}
+                className="center"
+                id="courses"
+                value={courseID}
+                onChange={(selected) => set_course_id(selected.target.value)}
+              >
+                {courses!.map((course: Course) => (
+                  <option value={course.id}>{course.name}</option>
+                ))}
+              </select>
+              <button
+                className="btn btn-primary"
+                onClick={() => {
+                  if (!!!localStorage.getItem("access_token"))
+                    navigate("/login");
+                  else Logout();
+                }}
+              >
+                {!!!localStorage.getItem("access_token") && <p>Login</p>}
+                {!!localStorage.getItem("access_token") && <p>Logout</p>}
+              </button>
+            </div>
+
             <h5>Rebríček</h5>
             <div
               className="d-flex border border-secondary rounded card-body justify-content-center"
@@ -98,7 +114,7 @@ export const MainScreen = ({ courseID, set_course_id }: Props) => {
               </div>
             </div>
           </CardHeader>
-          <CardContent style={{ height: "50%" }}>
+          <CardContent style={{ height: "100%" }}>
             <div
               className=""
               style={{
@@ -106,7 +122,7 @@ export const MainScreen = ({ courseID, set_course_id }: Props) => {
                 display: "flex",
                 flexFlow: "column",
                 justifyContent: "space-evenly",
-                height: "80%",
+                height: "70%",
               }}
             >
               <button

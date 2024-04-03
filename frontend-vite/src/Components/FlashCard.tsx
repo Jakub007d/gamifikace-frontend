@@ -5,6 +5,7 @@ import fetchAnswers from "./Downloaders/AnswersDownloader";
 import MobileBasicView from "./Views/MobileView/MobileBasicView";
 import fetchQuestions from "./Downloaders/QuestionsDownloader";
 import { Question, Answer } from "../props/Props";
+import { CardHeader, Card as UICard } from "@/components/ui/card";
 interface Props {
   question: Question[];
   okruhID: string;
@@ -52,15 +53,17 @@ function FlashCard({ question, okruhID }: Props) {
     }
   }
   return (
-    <MobileBasicView>
-      <CardWindow
-        itemShonw={answer_shown}
-        question={questions.at(actual_question)}
-        answers={answers}
-        onClick={() => {
-          setAnswer_shown(!answer_shown);
-        }}
-      ></CardWindow>
+    <UICard className="ui_card">
+      <CardHeader className="cardHeader" style={{ height: "50%" }}>
+        <CardWindow
+          itemShonw={answer_shown}
+          question={questions.at(actual_question)}
+          answers={answers}
+          onClick={() => {
+            setAnswer_shown(!answer_shown);
+          }}
+        ></CardWindow>
+      </CardHeader>
       <div className="card-body">
         <button
           type="button"
@@ -85,7 +88,7 @@ function FlashCard({ question, okruhID }: Props) {
           next
         </button>
       </div>
-    </MobileBasicView>
+    </UICard>
   );
 }
 export default FlashCard;

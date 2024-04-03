@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Card as UICard } from "@/components/ui/card";
 import fetchCourses from "../../Downloaders/CoursesDownloader";
 import { Course, Okruh } from "@/src/props/Props";
+import back_icon from "./icon/back.svg";
 interface Props {
   courseID: string;
   onSelected: (selected: string) => void;
@@ -35,15 +36,7 @@ const StudyScreen = ({ onSelected }: Props) => {
     );
   } else
     return (
-      <UICard
-        style={{
-          minWidth: "500px",
-          maxWidth: "700px",
-          height: "100vh",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
-      >
+      <UICard className="ui_card">
         <div
           className="card-body"
           style={{
@@ -52,17 +45,34 @@ const StudyScreen = ({ onSelected }: Props) => {
             justifyContent: "center",
           }}
         >
-          <select
-            style={{ width: "50%" }}
-            className="center"
-            id="courses"
-            value={courseID}
-            onChange={(selected) => setCourseID(selected.target.value)}
+          <div
+            style={{
+              height: "50px",
+              backgroundColor: "lightblue",
+              display: "flex",
+              justifyContent: "space-evenly",
+            }}
           >
-            {courses!.map((course: Course) => (
-              <option value={course.id}>{course.name}</option>
-            ))}
-          </select>
+            <img
+              src={back_icon}
+              style={{ height: "100%" }}
+              onClick={() => {
+                navigate("/Courses");
+              }}
+            ></img>
+            <select
+              style={{ width: "50%" }}
+              className="center"
+              id="courses"
+              value={courseID}
+              onChange={(selected) => setCourseID(selected.target.value)}
+            >
+              {courses!.map((course: Course) => (
+                <option value={course.id}>{course.name}</option>
+              ))}
+            </select>
+          </div>
+
           <h2 style={{ display: "block", textAlign: "center" }}>Okruhy</h2>
           {okruhs!.map((okruh: Okruh, index) => (
             <>

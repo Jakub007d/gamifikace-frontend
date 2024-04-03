@@ -5,6 +5,7 @@ import GenericCardWindow from "../../CardComponents/GenericCardWindow";
 import { Link } from "react-router-dom";
 import { NavigationButton } from "../../CardComponents/NavigationButton";
 import { Okruh } from "@/src/props/Props";
+import { CardContent, CardHeader, Card as UICard } from "@/components/ui/card";
 interface Props {
   okruhID: string;
 }
@@ -19,26 +20,37 @@ export const StudyInfo = ({ okruhID }: Props) => {
     getOkruh(okruhID);
   }, []);
   return (
-    <MobileBasicView>
-      <h1>{lection[0]?.name}</h1>
-      <GenericCardWindow>
-        <p>TUTO BUDE OBRÁZOK ALEBO NEJAKÝ TEXT</p>
-      </GenericCardWindow>
-      <NavigationButton
-        directory="/FlashCards"
-        text="Štúdium"
-        onSelected={() => null}
-      ></NavigationButton>
-      <NavigationButton
-        directory="/Quiz"
-        text="Quiz"
-        onSelected={() => null}
-      ></NavigationButton>
-      <NavigationButton
-        directory="/AddQuestion"
-        text="Prida Otázku"
-        onSelected={() => null}
-      ></NavigationButton>
-    </MobileBasicView>
+    <UICard className="ui_card">
+      <h1 style={{ textAlign: "center" }}>{lection[0]?.name}</h1>
+
+      <CardHeader className="cardHeader">
+        <div
+          className="d-flex border border-secondary rounded card-body justify-content-center"
+          style={{ height: "100%", margin: "20px" }}
+        >
+          <p>TUTO BUDE OBRÁZOK ALEBO NEJAKÝ TEXT</p>
+        </div>
+      </CardHeader>
+
+      <CardContent
+        style={{ height: "50%", display: "flex", flexDirection: "column" }}
+      >
+        <NavigationButton
+          directory="/FlashCards"
+          text="Štúdium"
+          onSelected={() => null}
+        ></NavigationButton>
+        <NavigationButton
+          directory="/Quiz"
+          text="Quiz"
+          onSelected={() => null}
+        ></NavigationButton>
+        <NavigationButton
+          directory="/AddQuestion"
+          text="Prida Otázku"
+          onSelected={() => null}
+        ></NavigationButton>
+      </CardContent>
+    </UICard>
   );
 };
