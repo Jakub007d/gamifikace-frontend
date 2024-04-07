@@ -45,34 +45,6 @@ const StudyScreen = ({ onSelected, courseID, setCourseID }: Props) => {
             justifyContent: "center",
           }}
         >
-          <div
-            style={{
-              height: "50px",
-              backgroundColor: "lightblue",
-              display: "flex",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <img
-              src={back_icon}
-              style={{ height: "100%" }}
-              onClick={() => {
-                navigate("/Courses");
-              }}
-            ></img>
-            <select
-              style={{ width: "50%" }}
-              className="center"
-              id="courses"
-              value={courseID}
-              onChange={(selected) => setCourseID(selected.target.value)}
-            >
-              {courses!.map((course: Course) => (
-                <option value={course.id}>{course.name}</option>
-              ))}
-            </select>
-          </div>
-
           <h2 style={{ display: "block", textAlign: "center" }}>Okruhy</h2>
           {okruhs!.map((okruh: Okruh, index) => (
             <>
