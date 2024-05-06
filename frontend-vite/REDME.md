@@ -4,7 +4,7 @@ Pre lokálne spustenie frontendu je potrebné :
 
 2. Následne je nutné v adresári projektu pomocou príkatu `npm install vite` nainštalovať nástroj pre building typescriptových projektov vite
 
-3. V súbore `/src/constants.tsx` je potrebné zmeniť adresu endpointov pokiaľ je nutné mať spustený backend lokálne.
+3. V súbore `/src/constants.tsx` je možné zmeniť adresu endpointov ak bude treba. V základe je nastavená lokálna adresa s defaultným portom ktorý django priradzuje k lokalnej inštancii servera v tvare : `http://127.0.0.1:8000`.
 
 4. Frontendový sever je spustiteľný príkazom `npm run dev`
 
