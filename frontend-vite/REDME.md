@@ -7,3 +7,13 @@ Pre lokálne spustenie frontendu je potrebné :
 3. V súbore `/src/constants.tsx` je potrebné zmeniť adresu endpointov pokiaľ je nutné mať spustený backend lokálne.
 
 4. Frontendový sever je spustiteľný príkazom `npm run dev`
+
+Aplikáciu bude takito možné spustiť po dobu 3 mesiacov aj z webovej lokality https://gamifikace.online/
+
+V súčastnom stave je možné v aplikácii vytvárať otázky, pridávať si navštevované predmety, študovať pomocov študijneho módu, komentovať otázky a účastniť sa výzvy za účelom bodového zisku.
+
+Pridanie nových okruhov, kurzov a účtov je možné pomocou backendu
+
+Uživateľské údaje na testovanie aplikácie:
+    Uživateľské meno: testovací_uživatel
+    Heslo: Heslo123123!
