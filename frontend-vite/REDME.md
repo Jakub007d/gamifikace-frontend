@@ -15,5 +15,5 @@ V súčastnom stave je možné v aplikácii vytvárať otázky, pridávať si na
 Pridanie nových okruhov, kurzov a účtov je možné pomocou backendu
 
 Uživateľské údaje na testovanie aplikácie:
-    Uživateľské meno: testovací_uživatel
-    Heslo: Heslo123123!
+    - Uživateľské meno: testovací_uživatel
+    - Heslo: Heslo123123!
