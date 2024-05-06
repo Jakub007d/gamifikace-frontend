@@ -1,0 +1,16 @@
+import { API_URL } from "@/src/constants";
+import { Question } from "@/src/props/Props";
+//Funkcia pre získanie otázok pre mód výzva
+async function fetchChallange(courseID: string): Promise<Question[]> {
+  try {
+    const response = await fetch(
+      API_URL + "/challange/querry?format=json&courseID=" + courseID
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    return [];
+  }
+}
+export default fetchChallange;
