@@ -17,3 +17,5 @@ Pridanie nových okruhov, kurzov a účtov je možné pomocou backendu
 Uživateľské údaje na testovanie aplikácie:
 - Uživateľské meno: testovací_uživatel
 - Heslo: Heslo123123!
+
+Všetky zdrojové kódy sa nachádzajú v adresári src
