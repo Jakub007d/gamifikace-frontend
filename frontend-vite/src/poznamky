@@ -1,8 +1,0 @@
-1. Implementácia databáze 70%
-2. Endpointy:
-    -Získanie otázok pre daný Okruh
-    -Získanie okruhov pre daný Kurz
-    -Získanie odpovedí pre danú otázku
-    -Získanie komentárov pre danú otázku
-3. Implementácia študíjneho módu flash card - 80%
-4. Implementácia študíjneho módu Quiz - 70%
