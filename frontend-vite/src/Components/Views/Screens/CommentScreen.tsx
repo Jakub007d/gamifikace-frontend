@@ -28,7 +28,7 @@ const formSchema = z.object({
 /**
  * CommentScreen slúži pre zobrazenie komentárov.
  * @param {Props} props
- * @param {string} props.questionID - ID komentovanej otázky.
+ * @param {string} questionID - ID komentovanej otázky.
  * @returns {JSX.Element} - Vracia funkčnú komponentu CommentScreen.
  */
 export const CommentScreen = ({ questionID }: Props) => {

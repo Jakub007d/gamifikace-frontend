@@ -173,7 +173,7 @@ export const QuizCard = ({
               disabled={answer_selected}
               onSubmit={(field: FieldValues) => {
                 if (
-                  field.answer == answers[0].text &&
+                  field.answer.toUpperCase() == answers[0].text.toUpperCase() &&
                   answers[0] != undefined
                 ) {
                   if (!answer_selected) {
