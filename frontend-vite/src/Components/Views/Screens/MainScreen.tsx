@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import fetchScore from "../../Downloaders/ScoreDownloader";
 import { Leaderboard_mini } from "../../Leaderboard/Leaderboard_mini";
 import CircularProgress from "@mui/material/CircularProgress";
+import ScoreUploader from "../../Uploaders/ScoreUploader";
+import fetchChallange from "../../Downloaders/ChallangeDownloader";
 interface Props {
   /** ID kurzu */
   courseID: string;
@@ -23,6 +25,10 @@ export const MainScreen = ({ courseID, userID }: Props) => {
   const { status, data: scores } = useQuery({
     queryKey: ["score", courseID],
     queryFn: () => fetchScore(courseID),
+  });
+  const { status: challange_status, data: challange_questions } = useQuery({
+    queryKey: [courseID, "challange_questions"],
+    queryFn: () => fetchChallange(courseID),
   });
   return (
     <UICard className="ui_card">
@@ -140,7 +146,11 @@ export const MainScreen = ({ courseID, userID }: Props) => {
               {localStorage.getItem("access_token") != undefined && (
                 <button
                   className="btn btn-primary"
-                  onClick={() => navigate("/Challange")}
+                  disabled={challange_questions?.length == 0}
+                  onClick={() => {
+                    navigate("/Challange");
+                    ScoreUploader(courseID, 0);
+                  }}
                 >
                   Výzva
                 </button>

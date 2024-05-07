@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { QuestionField } from "./QuestionField";
 import postQuestionWithAnswers from "../Uploaders/QuestionUploader";
 import { Answer } from "@/src/props/Props";
+import { Button, ButtonGroupContext } from "@mui/material";
 interface Props {
   newAnswers: Answer[];
   answerNumber: number;
@@ -63,8 +64,7 @@ export const MainAddScreen = ({
         }}
       >
         {newAnswers.map((answer: Answer) => (
-          <Link
-            to="/addAnswer"
+          <button
             className={answerCorrect(answer)}
             style={{
               width: "80%",
@@ -74,7 +74,7 @@ export const MainAddScreen = ({
             }}
           >
             {answer.text}
-          </Link>
+          </button>
         ))}
         {answerNumber < 3 && (
           <Link
@@ -98,6 +98,9 @@ export const MainAddScreen = ({
             marginLeft: "auto",
             marginRight: "auto",
           }}
+          disabled={
+            newAnswers.length < 1 || question_name == "" || question_text == ""
+          }
           onClick={onSubmit}
         >
           Hotovo

@@ -4,11 +4,16 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 interface Props {
   onAnswerCreated: (answer: Answer) => void;
+  answer?: Answer | undefined;
 }
 //Zobrazenie pre pridávanie otázky.
-export const AddAnswer = ({ onAnswerCreated }: Props) => {
+export const AddAnswer = ({ onAnswerCreated, answer }: Props) => {
   const [answer_text, set_answer_text] = useState("");
   const [answer_type, set_answer_type] = useState(false);
+  if (answer != undefined) {
+    set_answer_text(answer.text);
+    set_answer_type(answer_type);
+  }
   let navigate = useNavigate();
   const label = { inputProps: { "aria-label": "Switch demo" } };
   return (

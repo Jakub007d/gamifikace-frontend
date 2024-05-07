@@ -24,6 +24,7 @@ interface Props {
   /** ID kurzu je využívané pri pripisovaní bodov za výzvu */
   courseID: string;
 }
+
 /**
  * QuizScreen komponent slúži ako rozhranie pre vykrealovanie kvízových otázok.
  * @param {Props} props
@@ -65,8 +66,9 @@ function QuizScreen({ questions, is_challange, courseID }: Props) {
     if (actual_question < questions.length - 1) {
       set_ActualQuestion(actual_question + 1);
     } else {
-      if (!is_challange) navigate("/Quiz/Summary");
-      else {
+      if (!is_challange) {
+        navigate("/Quiz/Summary");
+      } else {
         navigate("/Challange/Summary");
       }
     }

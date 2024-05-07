@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ScoreUploader from "../Uploaders/ScoreUploader";
 import { Answer, Question } from "@/src/props/Props";
-import back_icon from "./icon/back.svg";
+import { useEffect } from "react";
 interface Props {
   answers: Answer[];
   questions: Question[];
@@ -11,6 +10,7 @@ interface Props {
   courseID: string;
   onSelectedQuestion: (questionID: string) => void;
 }
+
 /**
  * QuizSummary zobrazuje zhrnutie kvízu/výzvy.
  * @param {Props} props
@@ -21,6 +21,7 @@ interface Props {
  * @param {string} courseID - ID kurzu.
  * @returns {JSX.Element} - Vracia funkčnú komponentu QuizSummary.
  */
+
 export const QuizSummary = ({
   questions,
   answers,
@@ -29,7 +30,6 @@ export const QuizSummary = ({
   courseID,
   onSelectedQuestion,
 }: Props) => {
-  let navigate = useNavigate();
   ScoreUploader(courseID, score * 10);
   return (
     <div>
